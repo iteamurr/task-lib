@@ -16,12 +16,16 @@ html, body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0px auto;
-  padding: 0px 5px;
+  padding: 0px 10px;
 }
 
 .header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
   background-color: #000000;
 }
 
@@ -32,11 +36,38 @@ html, body {
   align-items: center;
 }
 
-.bi {
+.header__home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header__home a {
+  margin: 5px;
   color: #FFFFFF;
 }
-.bi:hover {
+.header__home:hover a {
   color: #B9B9B9;
+}
+
+.header__home__list {
+  display: none;
+}
+
+@media (max-width:767px) {
+  .header__home__list {
+    display: block;
+  }
+  .header__nav {
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+  }
+  .header__profile__username {
+    display: none;
+  }
 }
 
 .header__nav {
@@ -45,7 +76,7 @@ html, body {
   align-items: center;
 }
 
-.header__nav__item {
+.header__nav__item, .header__profile__username {
   font-family: Noto Sans;
   font-style: normal;
   font-weight: bold;
@@ -57,4 +88,18 @@ html, body {
 }
 .header__nav__item:hover {
   color: #FFFFFF;
+}
+
+.header__profile__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  text-decoration: none;
+}
+.header__profile__container div {
+  color: #FFFFFF;
+}
+.header__profile__container:hover div {
+  color: #B9B9B9;
 }
