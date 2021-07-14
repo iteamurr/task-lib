@@ -41,33 +41,16 @@ html, body {
   justify-content: space-around;
   align-items: center;
 }
-.header__home a {
+.header__home__list, .header__home__item {
   margin: 5px;
   color: #FFFFFF;
 }
-.header__home:hover a {
+.header__home__list:hover, .header__home__item:hover {
   color: #B9B9B9;
 }
 
 .header__home__list {
   display: none;
-}
-
-@media (max-width:767px) {
-  .header__home__list {
-    display: block;
-  }
-  .header__nav {
-    position: fixed;
-    flex-direction: column;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-  }
-  .header__profile__username {
-    display: none;
-  }
 }
 
 .header__nav {
@@ -102,4 +85,85 @@ html, body {
 }
 .header__profile__container:hover div {
   color: #B9B9B9;
+}
+
+@media (max-width:767px) {
+  .header__home__list {
+    display: block;
+  }
+
+  .header__nav {
+    position: fixed;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 35%;
+    height: 100%;
+    left: -100%;
+    top: 40px;
+    overflow: auto;
+
+    transition: all 0.4s ease 0s;
+    background-color: #171717;
+  }
+  .header__nav.active {
+    left: 0;
+  }
+
+  .header__profile__username {
+    display: none;
+  }
+}
+
+.content {
+  padding: 60px 9% 0px 9%;
+}
+
+.content__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content__header__title {
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+
+  color: #000000;
+}
+
+.content__header__sort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  text-decoration: none;
+}
+.content__header__sort div {
+  margin: 3px;
+  color: #8A8A8A;
+}
+.content__header__sort:hover div {
+  color: #474747;
+}
+
+.content__header__sort__text {
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+hr.divider {
+  border-top: 2px solid #000000;
+}
+
+@media (max-width:767px) {
+  .content.active {
+    transition: all 0.4s ease 0.1s;
+    padding: 60px 5% 0px 40%;
+  }
 }

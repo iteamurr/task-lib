@@ -55,9 +55,24 @@
     </header>
     <div class="content">
       <div class="container">
-        
+        <div class="content__header">
+          <h1 class="content__header__title">Inbox</h1>
+          <a href="#" class="content__header__sort">
+            <div class="content__header__sort__img">
+              <i class="bi bi-funnel"></i>
+            </div>
+            <div class="content__header__sort__text">
+              <span>Sort</span>
+            </div>
+          </a>
+        </div>
+        <hr class="divider">
+        {% block content %}
+        {% endblock %}
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
